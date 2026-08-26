@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(security find-generic-password -s \"anthropic\" -g)",
+      "Bash(security find-internet-password -s \"api.anthropic.com\" -g)",
+      "Bash(env)",
+      "Bash(security dump-keychain)",
+      "Bash(security find-generic-password -s \"Claude Code-credentials\" -g)",
+      "Bash(OAUTH_TOKEN=\"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\")",
+      "Bash(curl -s \"https://api.anthropic.com/v1/design/.well-known/oauth-protected-resource\" -H \"Authorization: Bearer $OAUTH_TOKEN\")",
+      "Bash(curl -s \"https://api.anthropic.com/v1/design/.well-known/oauth-protected-resource\")",
+      "Bash(PROJECT_ID=\"c0ae87b5-8696-46f0-aa1d-eb781ded4afa\")",
+      "Bash(__NEW_LINE_d9828eb6382b4fab__ curl -s -X POST \"https://api.anthropic.com/v1/design/mcp\" -H \"Authorization: Bearer $OAUTH_TOKEN\" -H \"Content-Type: application/json\" -d \"{\"\"jsonrpc\"\": \"\"2.0\"\", \"\"id\"\": 3, \"\"method\"\": \"\"tools/call\"\", \"\"params\"\": {\"\"name\"\": \"\"list_files\"\", \"\"arguments\"\": {\"\"project_id\"\": \"\"$PROJECT_ID\"\"}}}\")",
+      "Bash(__NEW_LINE_4a2345f65a71e0b0__ curl -v -X POST \"https://api.anthropic.com/v1/design/mcp\" -H \"Authorization: Bearer $OAUTH_TOKEN\" -H \"Content-Type: application/json\" -d \"{\"\"jsonrpc\"\": \"\"2.0\"\", \"\"id\"\": 3, \"\"method\"\": \"\"tools/call\"\", \"\"params\"\": {\"\"name\"\": \"\"list_files\"\", \"\"arguments\"\": {\"\"project_id\"\": \"\"$PROJECT_ID\"\"}}}\")",
+      "Bash(/usr/local/bin/npm run build)",
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(/Users/jk/.nvm/versions/node/v24.11.1/bin/npm run build)",
+      "Bash(/Users/jk/.nvm/versions/node/v24.11.1/bin/node --version)",
+      "Bash(/Users/jk/.nvm/versions/node/v24.11.1/bin/node /Users/jk/.nvm/versions/node/v24.11.1/bin/npm run build)",
+      "Bash(export PATH=\"/Users/jk/.nvm/versions/node/v24.11.1/bin:$PATH\")",
+      "Bash(node /Users/jk/.nvm/versions/node/v24.11.1/bin/npx tsc --noEmit)",
+      "Bash(node /Users/jk/.nvm/versions/node/v24.11.1/bin/npx vite build)",
+      "Bash(/opt/homebrew/bin/npm run build)",
+      "Bash(node_modules/.bin/vite build)",
+      "Bash(ls /usr/local/bin/node /opt/homebrew/bin/node ~/.nvm/versions/node/*/bin/node)",
+      "Bash(PATH=\"$HOME/.nvm/versions/node/v24.11.1/bin:$PATH\" node_modules/.bin/vite build)",
+      "Bash(node node_modules/.bin/vite build)",
+      "WebFetch(domain:tool.ssobig.com)",
+      "Bash(~/.nvm/versions/node/v24.11.1/bin/npm run build)",
+      "Bash(~/.nvm/versions/node/v24.11.1/bin/node ~/.nvm/versions/node/v24.11.1/bin/npm run build)",
+      "Bash(~/.nvm/versions/node/v24.11.1/bin/node --version)",
+      "Bash(PATH=\"$HOME/.nvm/versions/node/v24.11.1/bin:$PATH\" npm run build)"
+    ]
+  }
+}
