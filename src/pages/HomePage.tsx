@@ -442,7 +442,7 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
             바로 파티에 참가하세요.
           </p>
           <p className="font-sans" style={{ fontSize: '14px', color: '#B98CE0', lineHeight: 1.7, margin: '0 0 26px' }}>
-            4문항 진단 &amp; 참가 신청 · 1분이면 끝나요
+            8문항 진단 &amp; 참가 신청 · 2분이면 끝나요
           </p>
           <a
             href="/apply"

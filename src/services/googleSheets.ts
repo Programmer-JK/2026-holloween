@@ -1,6 +1,6 @@
 import type { ApplyResponse, AttendeeResponse } from '../types/party';
 
-const API_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL as string;
+const API_URL = 'https://script.google.com/macros/s/AKfycbyNC5gl48GczolhKAy3rK91SQju0oo3plE2ysgYMsM99vP1b98UmJbKEckcyzUFztmHCQ/exec';
 
 function sanitizeNickname(nickname: string): string {
   return nickname
@@ -17,7 +17,10 @@ function sanitizeNickname(nickname: string): string {
     });
 }
 
-export async function applyParty(rawNickname: string): Promise<ApplyResponse> {
+export async function applyParty(
+  rawNickname: string,
+  meta?: { character?: string; characterIcon?: string },
+): Promise<ApplyResponse> {
   const nickname = sanitizeNickname(rawNickname);
 
   if (!nickname || nickname.length === 0) {
@@ -38,7 +41,7 @@ export async function applyParty(rawNickname: string): Promise<ApplyResponse> {
     const response = await fetch(API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'text/plain' },
-      body: JSON.stringify({ action: 'apply', nickname }),
+      body: JSON.stringify({ action: 'apply', nickname, ...meta }),
     });
 
     if (!response.ok) {
