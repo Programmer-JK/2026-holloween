@@ -1,7 +1,7 @@
 const INFO_ITEMS = [
   { label: 'DATE', value: '2026.10.31', sub: '토요일 저녁', valueFont: 'pixel' as const },
   { label: 'LOCATION', value: '사당역', sub: '장소 추후 공지', valueFont: 'sans' as const },
-  { label: 'FEE', value: '30,000원', sub: '포틀럭 포함', valueFont: 'sans' as const },
+  { label: 'FEE', value: '30,000원', sub: '대관비 + 음식 비용', valueFont: 'sans' as const },
 ];
 
 export function PartyInfo() {
@@ -40,7 +40,7 @@ export function PartyInfo() {
             {item.valueFont === 'pixel' ? (
               <div
                 className="font-pixel"
-                style={{ fontSize: '15px', color: '#EDE7F6', marginBottom: '6px' }}
+                style={{ fontSize: '20px', color: '#EDE7F6', marginBottom: '6px' }}
               >
                 {item.value}
               </div>

@@ -6,6 +6,28 @@ import { Countdown } from '../components/Countdown';
 import { AttendeeModal } from '../components/AttendeeModal';
 import { PartyInfo } from '../components/PartyInfo';
 
+function BatSvg({ fill = '#5B2A86', bodyFill = '#3a1a5a' }: { fill?: string; bodyFill?: string }) {
+  return (
+    <svg viewBox="0 0 32 16" width="100%" height="100%" style={{ imageRendering: 'pixelated' }} fill="none">
+      <rect x="0" y="6" width="2" height="2" fill={fill} />
+      <rect x="2" y="4" width="2" height="4" fill={fill} />
+      <rect x="4" y="3" width="2" height="6" fill={fill} />
+      <rect x="6" y="2" width="2" height="7" fill={fill} />
+      <rect x="8" y="4" width="2" height="5" fill={fill} />
+      <rect x="22" y="4" width="2" height="5" fill={fill} />
+      <rect x="24" y="2" width="2" height="7" fill={fill} />
+      <rect x="26" y="3" width="2" height="6" fill={fill} />
+      <rect x="28" y="4" width="2" height="4" fill={fill} />
+      <rect x="30" y="6" width="2" height="2" fill={fill} />
+      <rect x="12" y="5" width="8" height="6" fill={bodyFill} />
+      <rect x="13" y="4" width="2" height="2" fill={bodyFill} />
+      <rect x="17" y="4" width="2" height="2" fill={bodyFill} />
+      <rect x="13" y="6" width="2" height="2" fill="#FF7A00" />
+      <rect x="17" y="6" width="2" height="2" fill="#FF7A00" />
+    </svg>
+  );
+}
+
 // Konami code easter egg
 const KONAMI = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight'];
 
@@ -20,7 +42,6 @@ const SECRET_MESSAGES = [
 const OWL_LINES = [
   '끼익~ 파티엔 진심이지 🦇',
   '초대장은 잘 전달했다구!',
-  '나도 포틀럭 가져갈까 고민중...',
   '10월 31일, 잊지 마!',
 ];
 
@@ -41,23 +62,7 @@ function BatEasterEgg({ line }: { line: string }) {
           animation: 'owlLoop 3s ease-in-out forwards',
         }}
       >
-        <svg viewBox="0 0 32 16" width="100%" height="100%" style={{ imageRendering: 'pixelated' }} fill="none">
-          <rect x="0" y="6" width="2" height="2" fill="#5B2A86" />
-          <rect x="2" y="4" width="2" height="4" fill="#5B2A86" />
-          <rect x="4" y="3" width="2" height="6" fill="#5B2A86" />
-          <rect x="6" y="2" width="2" height="7" fill="#5B2A86" />
-          <rect x="8" y="4" width="2" height="5" fill="#5B2A86" />
-          <rect x="22" y="4" width="2" height="5" fill="#5B2A86" />
-          <rect x="24" y="2" width="2" height="7" fill="#5B2A86" />
-          <rect x="26" y="3" width="2" height="6" fill="#5B2A86" />
-          <rect x="28" y="4" width="2" height="4" fill="#5B2A86" />
-          <rect x="30" y="6" width="2" height="2" fill="#5B2A86" />
-          <rect x="12" y="5" width="8" height="6" fill="#3a1a5a" />
-          <rect x="13" y="4" width="2" height="2" fill="#3a1a5a" />
-          <rect x="17" y="4" width="2" height="2" fill="#3a1a5a" />
-          <rect x="13" y="6" width="2" height="2" fill="#FF7A00" />
-          <rect x="17" y="6" width="2" height="2" fill="#FF7A00" />
-        </svg>
+        <BatSvg />
         <div
           style={{
             position: 'absolute',
@@ -371,10 +376,10 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
         <PartyInfo />
       </div>
 
-      {/* ── Potluck Section ─────────────────────────────── */}
+      {/* ── Timetable Section ─────────────────────────────── */}
       <section
         style={{ maxWidth: '640px', width: '100%', padding: '0 16px 60px' }}
-        aria-label="포틀럭 안내"
+        aria-label="타임테이블"
       >
         <div
           style={{
@@ -385,37 +390,80 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
             padding: '26px 22px',
           }}
         >
-          <h3 className="font-pixel" style={{ fontSize: '12px', color: '#8B4BC0', textShadow: '0 0 10px #8B4BC0', margin: '0 0 8px' }}>
-            POTLUCK
+          <h3 className="font-pixel" style={{ fontSize: '12px', color: '#8B4BC0', textShadow: '0 0 10px #8B4BC0', margin: '0 0 24px' }}>
+            TIMETABLE
           </h3>
-          <p className="font-sans" style={{ fontSize: '14px', color: '#B98CE0', margin: '0 0 20px' }}>
-            핑거푸드 &amp; 각자 가져오기
-          </p>
-          <p className="font-sans" style={{ fontSize: '17px', color: '#EDE7F6', lineHeight: 1.7, margin: '0 0 20px' }}>
-            간단한 음식이나 간식을 하나씩 가져와 주세요.
-          </p>
-          <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px', display: 'flex', flexDirection: 'column', gap: '11px' }}>
-            {[
-              '직접 만든 음식',
-              '편의점에서 사 온 간식',
-              '배달 음식도 OK',
-            ].map((item) => (
-              <li
-                key={item}
-                className="font-sans"
-                style={{ display: 'flex', alignItems: 'center', gap: '11px', fontSize: '15px', color: '#EDE7F6' }}
-              >
+
+          {[
+            {
+              time: '19:00–20:00',
+              title: '입장 & 아이스브레이킹',
+              items: [
+                '웰컴 드링크, 포토존',
+                '오픈채팅 QR 안내 → "오늘 컨셉 한 줄 소개" 올리기',
+              ],
+            },
+            {
+              time: '20:00–21:00',
+              title: '팀 퀴즈',
+              items: [
+                '테이블별 팀전, 스케치북 + 굵은 매직으로 동시 공개',
+                '20:55 우승팀 시상 (상품: 술 한 병)',
+              ],
+            },
+            {
+              time: '21:00–22:00',
+              title: '자유 시간',
+              items: [
+                '21:30 의상상 투표 마감 공지',
+                '21:45 단체 사진',
+              ],
+            },
+            {
+              time: '22:00–23:00',
+              title: '시상식 & 마무리',
+              items: [
+                '의상상 후보 호명 → PR 타임 (1인 30초~1분) → 현장 투표 → 발표',
+                '22:30 이후 마무리 자유 시간',
+              ],
+            },
+          ].map((block, idx) => (
+            <div
+              key={block.time}
+              style={{
+                marginBottom: idx < 3 ? '20px' : 0,
+                paddingBottom: idx < 3 ? '20px' : 0,
+                borderBottom: idx < 3 ? '1px solid rgba(91,42,134,.3)' : 'none',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '10px', flexWrap: 'wrap' }}>
                 <span
-                  style={{ width: '7px', height: '7px', background: '#FF7A00', transform: 'rotate(45deg)', flexShrink: 0, display: 'inline-block' }}
-                  aria-hidden="true"
-                />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p className="font-sans" style={{ fontSize: '14px', color: '#B98CE0', margin: 0 }}>
-            부담 없이 함께 나눠 먹는 파티입니다.
-          </p>
+                  className="font-pixel"
+                  style={{ fontSize: '11px', color: '#FF7A00', whiteSpace: 'nowrap', flexShrink: 0 }}
+                >
+                  {block.time}
+                </span>
+                <span className="font-sans" style={{ fontSize: '16px', color: '#EDE7F6', fontWeight: 600 }}>
+                  {block.title}
+                </span>
+              </div>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '7px' }}>
+                {block.items.map((item) => (
+                  <li
+                    key={item}
+                    className="font-sans"
+                    style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14px', color: '#B98CE0', lineHeight: 1.6 }}
+                  >
+                    <span
+                      style={{ width: '5px', height: '5px', background: '#5B2A86', transform: 'rotate(45deg)', flexShrink: 0, display: 'inline-block', marginTop: '7px' }}
+                      aria-hidden="true"
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -474,27 +522,9 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
         <h3 className="font-pixel" style={{ fontSize: '13px', color: '#EDE7F6', margin: '0 0 16px' }}>
           👻 SEE YOU THERE
         </h3>
-        <p className="font-sans" style={{ fontSize: '14px', color: '#8B4BC0', margin: '0 0 24px' }}>
+        <p className="font-sans" style={{ fontSize: '14px', color: '#8B4BC0', margin: 0 }}>
           2026년 10월 31일, 사당역에서 만나요!
         </p>
-        <a
-          href="/apply"
-          onClick={(e) => { e.preventDefault(); navigate('/apply'); }}
-          style={{
-            textDecoration: 'none',
-            display: 'inline-block',
-            fontFamily: "'Do Hyeon', sans-serif",
-            fontWeight: 700,
-            fontSize: '18px',
-            padding: '20px 32px',
-            background: '#FF7A00',
-            color: '#000',
-            border: '2px solid #FF7A00',
-            boxShadow: '0 10px 24px rgba(0,0,0,.4)',
-          }}
-        >
-          🎃 파티 참가 신청
-        </a>
       </section>
 
       {/* ── Footer ─────────────────────────────── */}
@@ -520,23 +550,7 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
             title="🦇"
             aria-label="박쥐"
           >
-            <svg viewBox="0 0 32 16" width="100%" height="100%" style={{ imageRendering: 'pixelated' }} fill="none">
-              <rect x="0" y="6" width="2" height="2" fill="#5B2A86" />
-              <rect x="2" y="4" width="2" height="4" fill="#5B2A86" />
-              <rect x="4" y="3" width="2" height="6" fill="#5B2A86" />
-              <rect x="6" y="2" width="2" height="7" fill="#5B2A86" />
-              <rect x="8" y="4" width="2" height="5" fill="#5B2A86" />
-              <rect x="22" y="4" width="2" height="5" fill="#5B2A86" />
-              <rect x="24" y="2" width="2" height="7" fill="#5B2A86" />
-              <rect x="26" y="3" width="2" height="6" fill="#5B2A86" />
-              <rect x="28" y="4" width="2" height="4" fill="#5B2A86" />
-              <rect x="30" y="6" width="2" height="2" fill="#5B2A86" />
-              <rect x="12" y="5" width="8" height="6" fill="#3a1a5a" />
-              <rect x="13" y="4" width="2" height="2" fill="#3a1a5a" />
-              <rect x="17" y="4" width="2" height="2" fill="#3a1a5a" />
-              <rect x="13" y="6" width="2" height="2" fill="#FF7A00" />
-              <rect x="17" y="6" width="2" height="2" fill="#FF7A00" />
-            </svg>
+            <BatSvg />
           </div>
           <span style={{ fontSize: '18px', opacity: .4 }}>🕷️</span>
           <span style={{ fontSize: '18px', opacity: .4 }}>🪦</span>
