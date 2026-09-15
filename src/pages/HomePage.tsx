@@ -152,7 +152,7 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
   }, []);
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center">
+    <div className="relative min-h-screen flex flex-col items-center" style={{ overflowX: 'hidden' }}>
 
       {/* Replay intro button */}
       {onReplayIntro && (
@@ -407,7 +407,7 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
               time: '20:00–21:00',
               title: '팀 퀴즈',
               items: [
-                '테이블별 팀전, 스케치북 + 굵은 매직으로 동시 공개',
+                '테이블별 팀전, 팀당 한 명이 모바일로 정답 입력',
                 '20:55 우승팀 시상 (상품: 술 한 병)',
               ],
             },
@@ -452,7 +452,7 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
                   <li
                     key={item}
                     className="font-sans"
-                    style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14px', color: '#B98CE0', lineHeight: 1.6 }}
+                    style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14px', color: '#B98CE0', lineHeight: 1.6, minWidth: 0, overflowWrap: 'break-word', wordBreak: 'break-word' }}
                   >
                     <span
                       style={{ width: '5px', height: '5px', background: '#5B2A86', transform: 'rotate(45deg)', flexShrink: 0, display: 'inline-block', marginTop: '7px' }}
@@ -497,10 +497,13 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
             onClick={(e) => { e.preventDefault(); navigate('/apply'); }}
             style={{
               textDecoration: 'none',
-              display: 'inline-block',
+              display: 'block',
+              width: '100%',
+              boxSizing: 'border-box',
+              textAlign: 'center',
               fontFamily: "'Do Hyeon', sans-serif",
-              fontSize: '19px',
-              padding: '18px 30px',
+              fontSize: 'clamp(15px, 4vw, 19px)',
+              padding: '18px 20px',
               background: '#FF7A00',
               color: '#000',
               border: '2px solid #FF7A00',
