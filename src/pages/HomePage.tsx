@@ -400,11 +400,11 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
               title: '입장 & 아이스브레이킹',
               items: [
                 '웰컴 드링크, 포토존',
-                '오픈채팅 QR 안내 → "오늘 컨셉 한 줄 소개" 올리기',
+                '입장 사이트 QR 안내 → "자신에 대해 한 줄 소개" 올리기',
               ],
             },
             {
-              time: '20:30–22:00',
+              time: '20:30–21:30',
               title: '레크레이션',
               items: [
                 '낱말 퀴즈, 가격 퀴즈, 베팅 게임',
@@ -412,8 +412,8 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
               ],
             },
             {
-              time: '22:00–23:00',
-              title: '자유 시간',
+              time: '21:30–24:00',
+              title: '자유 시간 및 자율 퇴실. 12시 마감',
               items: [],
             },
           ].map((block, idx) => (
