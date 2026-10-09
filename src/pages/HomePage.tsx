@@ -396,7 +396,7 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
 
           {[
             {
-              time: '19:00–20:00',
+              time: '19:00–20:30',
               title: '입장 & 아이스브레이킹',
               items: [
                 '웰컴 드링크, 포토존',
@@ -404,28 +404,17 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
               ],
             },
             {
-              time: '20:00–21:00',
-              title: '팀 퀴즈',
+              time: '20:30–22:00',
+              title: '레크레이션',
               items: [
-                '테이블별 팀전, 팀당 한 명이 모바일로 정답 입력',
-                '20:55 우승팀 시상 (상품: 술 한 병)',
-              ],
-            },
-            {
-              time: '21:00–22:00',
-              title: '자유 시간',
-              items: [
-                '21:30 의상상 투표 마감 공지',
-                '21:45 단체 사진',
+                '낱말 퀴즈, 가격 퀴즈, 베팅 게임',
+                '21:50 우승팀 결정 (상품: 술 한 병)',
               ],
             },
             {
               time: '22:00–23:00',
-              title: '시상식 & 마무리',
-              items: [
-                '의상상 후보 호명 → PR 타임 (1인 30초~1분) → 현장 투표 → 발표',
-                '22:30 이후 마무리 자유 시간',
-              ],
+              title: '자유 시간',
+              items: [],
             },
           ].map((block, idx) => (
             <div
