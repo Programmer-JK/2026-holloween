@@ -1,6 +1,6 @@
 const INFO_ITEMS = [
   { label: 'DATE', value: '2026.10.31', sub: '토요일 저녁 7시~12시' },
-  { label: 'LOCATION', value: '사당역', sub: '10번 출구에서 걸어서 10분 거리' },
+  { label: 'LOCATION', value: '사당역', sub: '10번 출구에서 걸어서 10분 거리', note: '정확한 장소는 단톡방 초대 후 공지드립니다.' },
   { label: 'FEE', value: '30,000원', sub: '대관비' },
 ];
 
@@ -49,6 +49,14 @@ export function PartyInfo() {
             >
               {item.sub}
             </div>
+            {'note' in item && (
+              <div
+                className="font-sans"
+                style={{ fontSize: '12px', color: '#FF7A00', marginTop: '8px', lineHeight: 1.5 }}
+              >
+                {item.note}
+              </div>
+            )}
           </div>
         ))}
       </div>
