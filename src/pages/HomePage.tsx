@@ -383,7 +383,7 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '24px' }}>
             {[
-              '할로윈은 챙기고 싶은데 셈바/클럽은 별로인 분',
+              '할로윈은 챙기고 싶은데 사람 많은 곳은 별로인 분',
               '새로운 사람들과 자연스럽게 친해지고 싶은 분',
               '거하게 놀기보다 오손도손 즐기고 싶은 분',
               '분위기는 제대로, 부담은 없이 보내고 싶은 분',
