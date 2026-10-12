@@ -618,8 +618,11 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
             할로윈 MBTI로 내 캐릭터를 정하고<br />
             바로 파티에 참가하세요.
           </p>
-          <p className="font-sans" style={{ fontSize: '14px', color: '#B98CE0', lineHeight: 1.7, margin: '0 0 26px' }}>
+          <p className="font-sans" style={{ fontSize: '14px', color: '#B98CE0', lineHeight: 1.7, margin: '0 0 6px' }}>
             8문항 진단 &amp; 참가 신청 · 2분이면 끝나요
+          </p>
+          <p className="font-sans" style={{ fontSize: '13px', color: '#5B2A86', lineHeight: 1.7, margin: '0 0 26px' }}>
+            퀴즈 건너뛰고 바로 신청도 가능해요
           </p>
           <a
             href="/apply"
