@@ -457,10 +457,22 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
               <p className="font-sans" style={{ fontSize: '13px', color: '#FF7A00', margin: '0 0 6px', letterSpacing: '.05em' }}>
                 모집 마감 &amp; 입금
               </p>
-              <p className="font-sans" style={{ fontSize: '14px', color: '#B98CE0', lineHeight: 1.7, margin: 0 }}>
+              <p className="font-sans" style={{ fontSize: '14px', color: '#B98CE0', lineHeight: 1.7, margin: '0 0 12px' }}>
                 10월 21일까지 신청 후, 21일에 계좌 개인 전달 예정입니다.<br />
                 입금 확인 시 자리가 확정됩니다.
               </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                {['신청 완료', '입금 확인', '단톡방 초대', '장소 공지'].map((step, i, arr) => (
+                  <span key={step} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span className="font-sans" style={{ fontSize: '12px', color: '#EDE7F6', background: 'rgba(91,42,134,.3)', padding: '3px 10px' }}>
+                      {step}
+                    </span>
+                    {i < arr.length - 1 && (
+                      <span style={{ color: '#5B2A86', fontSize: '12px' }}>→</span>
+                    )}
+                  </span>
+                ))}
+              </div>
             </div>
             <div>
               <p className="font-sans" style={{ fontSize: '13px', color: '#FF7A00', margin: '0 0 6px', letterSpacing: '.05em' }}>
