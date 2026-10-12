@@ -1,7 +1,7 @@
 const INFO_ITEMS = [
-  { label: 'DATE', value: '2026.10.31', sub: '토요일 저녁' },
-  { label: 'LOCATION', value: '사당역', sub: '장소 추후 공지' },
-  { label: 'FEE', value: '30,000원', sub: '대관비 + 음식 비용' },
+  { label: 'DATE', value: '2026.10.31', sub: '토요일 저녁 7시~12시' },
+  { label: 'LOCATION', value: '사당역', sub: '10번 출구에서 걸어서 10분 거리' },
+  { label: 'FEE', value: '30,000원', sub: '대관비' },
 ];
 
 export function PartyInfo() {

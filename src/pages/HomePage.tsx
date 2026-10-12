@@ -287,11 +287,11 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
           }}
         >
           <p className="font-sans" style={{ fontSize: '16px', color: '#EDE7F6', margin: '0 0 8px' }}>
-            👻 유령도 좀비도 환영합니다.
+            👻 클럽 말고, 오손도손.
           </p>
           <p className="font-sans" style={{ fontSize: '14px', color: '#8B4BC0', lineHeight: 1.7, margin: 0 }}>
-            10월의 마지막 밤,<br />
-            우리끼리 즐기는 작은 할로윈 파티
+            10월의 마지막 밤을<br />
+            내 방식대로 즐기는 할로윈 파티
           </p>
         </div>
 
@@ -357,16 +357,48 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
             padding: '26px 22px',
           }}
         >
-          <h3 className="font-pixel" style={{ fontSize: '12px', color: '#8B4BC0', margin: '0 0 16px' }}>
+          <h3 className="font-pixel" style={{ fontSize: '12px', color: '#8B4BC0', margin: '0 0 20px' }}>
             THIS HALLOWEEN...
           </h3>
-          <p className="font-sans" style={{ fontSize: '16px', color: '#EDE7F6', lineHeight: 1.7, margin: '0 0 12px' }}>
-            무서운 밤을 혼자 보내기엔 아쉽잖아요?
+
+          {/* Hook */}
+          <p className="font-sans" style={{ fontSize: '20px', color: '#EDE7F6', lineHeight: 1.6, margin: '0 0 10px', fontWeight: 600 }}>
+            내향형을 위한 할로윈 파티?
           </p>
-          <p className="font-sans" style={{ fontSize: '15px', color: '#B98CE0', lineHeight: 1.8, margin: 0 }}>
-            거창한 준비는 필요 없습니다.<br />
-            먹고, 이야기하고, 놀고,<br />
-            할로윈 분위기만 제대로 즐겨주세요.
+          <p className="font-sans" style={{ fontSize: '22px', color: '#FF7A00', lineHeight: 1.5, margin: '0 0 28px', fontWeight: 700 }}>
+            그것이 바로 여기입니다!
+          </p>
+
+          {/* Vibe description */}
+          <p className="font-sans" style={{ fontSize: '15px', color: '#EDE7F6', lineHeight: 1.9, margin: '0 0 28px' }}>
+            시끄러운 음악과 인파 대신,<br />
+            따뜻한 공간에서 음식을 나눠 먹고<br />
+            게임도 하고 이야기를 나누다 보면<br />
+            어느새 처음 본 사람인데 편해져 있는 밤.
+          </p>
+
+          {/* Who it's for */}
+          <p className="font-sans" style={{ fontSize: '12px', color: '#8B4BC0', letterSpacing: '.08em', margin: '0 0 14px' }}>
+            이런 분께 딱입니다
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '24px' }}>
+            {[
+              '할로윈은 챙기고 싶은데 셈바/클럽은 별로인 분',
+              '새로운 사람들과 자연스럽게 친해지고 싶은 분',
+              '거하게 놀기보다 오손도손 즐기고 싶은 분',
+              '분위기는 제대로, 부담은 없이 보내고 싶은 분',
+            ].map((text) => (
+              <div key={text} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                <span style={{ color: '#FF7A00', fontSize: '14px', flexShrink: 0, marginTop: '1px' }}>✓</span>
+                <p className="font-sans" style={{ fontSize: '14px', color: '#B98CE0', lineHeight: 1.6, margin: 0 }}>
+                  {text}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p className="font-sans" style={{ fontSize: '13px', color: '#c19dde', lineHeight: 1.7, margin: 0, borderTop: '1px solid rgba(91,42,134,.3)', paddingTop: '16px' }}>
+            🎃 의상은 자율 · 준비물은 같이 먹을 음식 하나
           </p>
         </div>
       </section>
@@ -375,6 +407,57 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
       <div style={{ width: '100%', paddingBottom: '60px' }}>
         <PartyInfo />
       </div>
+
+      {/* ── Notice Section ─────────────────────────────── */}
+      <section
+        style={{ maxWidth: '640px', width: '100%', padding: '0 16px 60px' }}
+        aria-label="신청 안내"
+      >
+        <div
+          style={{
+            background: '#1A1026',
+            border: '1px solid #5B2A86',
+            borderTop: '3px solid #8B4BC0',
+            boxShadow: '0 10px 24px rgba(0,0,0,.4)',
+            padding: '26px 22px',
+          }}
+        >
+          <h3 className="font-pixel" style={{ fontSize: '12px', color: '#8B4BC0', margin: '0 0 20px' }}>
+            NOTICE
+          </h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+            <div>
+              <p className="font-sans" style={{ fontSize: '13px', color: '#FF7A00', margin: '0 0 6px', letterSpacing: '.05em' }}>
+                모집 마감 &amp; 입금
+              </p>
+              <p className="font-sans" style={{ fontSize: '14px', color: '#B98CE0', lineHeight: 1.7, margin: 0 }}>
+                10월 21일까지 신청 후, 21일에 계좌 개인 전달 예정입니다.<br />
+                입금 확인 시 자리가 확정됩니다.
+              </p>
+            </div>
+            <div>
+              <p className="font-sans" style={{ fontSize: '13px', color: '#FF7A00', margin: '0 0 6px', letterSpacing: '.05em' }}>
+                인원
+              </p>
+              <p className="font-sans" style={{ fontSize: '14px', color: '#B98CE0', lineHeight: 1.7, margin: 0 }}>
+                최대 20명 (선착순 마감)
+              </p>
+            </div>
+            <div>
+              <p className="font-sans" style={{ fontSize: '13px', color: '#FF7A00', margin: '0 0 6px', letterSpacing: '.05em' }}>
+                지참물
+              </p>
+              <p className="font-sans" style={{ fontSize: '14px', color: '#B98CE0', lineHeight: 1.7, margin: '0 0 8px' }}>
+                같이 먹을 음식 하나씩 가져오면 좋아요 🎃
+              </p>
+              <p className="font-sans" style={{ fontSize: '13px', color: '#8B4BC0', lineHeight: 1.8, margin: 0 }}>
+                과자 · 과일 · 핑거푸드 · 음료 · 디저트류 등<br />
+                간단히 나눠 먹을 수 있는 것이면 무엇이든 환영합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── Timetable Section ─────────────────────────────── */}
       <section
@@ -415,6 +498,7 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
               time: '21:30–24:00',
               title: '자유 시간 및 자율 퇴실. 12시 마감',
               items: [],
+              note: '대화할 사람이 없다고요? 걱정 마세요.\n여러분의 친구 👻 조라가 두둥~ 등장합니다!',
             },
           ].map((block, idx) => (
             <div
@@ -451,6 +535,20 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
                   </li>
                 ))}
               </ul>
+              {'note' in block && block.note && (
+                <div
+                  style={{
+                    marginTop: '14px',
+                    padding: '12px 16px',
+                    background: 'rgba(255,122,0,.07)',
+                    border: '1px dashed rgba(255,122,0,.5)',
+                  }}
+                >
+                  <p className="font-sans" style={{ fontSize: '13px', color: '#FF7A00', lineHeight: 1.8, margin: 0, whiteSpace: 'pre-line' }}>
+                    {block.note}
+                  </p>
+                </div>
+              )}
             </div>
           ))}
         </div>

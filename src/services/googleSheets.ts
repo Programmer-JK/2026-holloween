@@ -19,7 +19,7 @@ function sanitizeNickname(nickname: string): string {
 
 export async function applyParty(
   rawNickname: string,
-  meta?: { character?: string; characterIcon?: string },
+  meta?: { character?: string; characterIcon?: string; wish?: string },
 ): Promise<ApplyResponse> {
   const nickname = sanitizeNickname(rawNickname);
 

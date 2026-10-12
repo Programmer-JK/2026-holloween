@@ -249,6 +249,7 @@ export function ApplyPage() {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [mbtiCode, setMbtiCode] = useState('');
   const [nickname, setNickname] = useState('');
+  const [wish, setWish] = useState('');
   const [formState, setFormState] = useState<FormState>('idle');
   const [fieldError, setFieldError] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -303,7 +304,7 @@ export function ApplyPage() {
       const char = mbtiCode ? CHARACTERS[mbtiCode] : null;
       const result = await applyParty(
         nickname.trim(),
-        char ? { character: char.name, characterIcon: char.icon } : undefined,
+        { ...(char ? { character: char.name, characterIcon: char.icon } : {}), ...(wish.trim() ? { wish: wish.trim() } : {}) },
       );
       if (result.success) {
         setPhase('success');
@@ -589,6 +590,41 @@ export function ApplyPage() {
               <p style={{ fontFamily: "'Press Start 2P', monospace", fontSize: '8px', color: '#8B4BC0', lineHeight: 2 }}>
                 📅 2026.10.31 · 사당역<br />
                 💰 30,000원 · 🍕 포틀럭 파티
+              </p>
+            </div>
+
+            {/* Wish */}
+            <div style={{ marginBottom: '18px' }}>
+              <label htmlFor="wish" style={{ display: 'block', fontFamily: "'Press Start 2P', monospace", fontSize: '8px', color: '#8B4BC0', marginBottom: '10px' }}>
+                WISH <span style={{ color: '#5B2A86' }}>(선택)</span>
+              </label>
+              <p style={{ fontFamily: "'Do Hyeon', sans-serif", fontSize: '13px', color: '#d09bff', marginBottom: '8px', lineHeight: 1.6 }}>
+                파티에 한 마디 남겨요 👻
+              </p>
+              <textarea
+                id="wish"
+                value={wish}
+                onChange={e => setWish(e.target.value)}
+                maxLength={200}
+                placeholder="예) 보드게임 하고 싶어요 / 조용한 사람끼리 모이고 싶어요 / 없음"
+                disabled={formState === 'loading'}
+                rows={3}
+                style={{
+                  width: '100%',
+                  background: '#0B0610',
+                  color: '#EDE7F6',
+                  fontSize: '14px',
+                  padding: '12px 16px',
+                  border: '2px solid #5B2A86',
+                  outline: 'none',
+                  fontFamily: "'Do Hyeon', sans-serif",
+                  boxSizing: 'border-box',
+                  resize: 'vertical',
+                  lineHeight: 1.6,
+                }}
+              />
+              <p style={{ fontFamily: "'Press Start 2P', monospace", fontSize: '7px', color: '#5B2A86', textAlign: 'right', marginTop: '4px' }}>
+                {wish.length}/200
               </p>
             </div>
 
