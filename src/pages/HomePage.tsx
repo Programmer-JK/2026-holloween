@@ -397,7 +397,34 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
             ))}
           </div>
 
-          <p className="font-sans" style={{ fontSize: '13px', color: '#c19dde', lineHeight: 1.7, margin: 0, borderTop: '1px solid rgba(91,42,134,.3)', paddingTop: '16px' }}>
+          {/* Game link callout */}
+          <div style={{ borderTop: '1px solid rgba(91,42,134,.3)', paddingTop: '16px', marginBottom: '14px' }}>
+            <p className="font-sans" style={{ fontSize: '13px', color: '#8B4BC0', margin: '0 0 8px' }}>
+              🎮 어색한 분위기가 걱정된다면?
+            </p>
+            <p className="font-sans" style={{ fontSize: '14px', color: '#B98CE0', lineHeight: 1.7, margin: '0 0 10px' }}>
+              파티에서 함께 플레이할 수 있는 보드게임 사이트를 공유할 예정이에요.<br />
+              처음 만나도 게임 하나면 금방 친해집니다.
+            </p>
+            <a
+              href="https://nola-zora.vercel.app/lobby"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                fontFamily: "'Do Hyeon', sans-serif",
+                fontSize: '13px',
+                color: '#FF7A00',
+                border: '1px solid rgba(255,122,0,.4)',
+                padding: '6px 14px',
+                textDecoration: 'none',
+              }}
+            >
+              🕹 게임 미리 구경하기 →
+            </a>
+          </div>
+
+          <p className="font-sans" style={{ fontSize: '13px', color: '#c19dde', lineHeight: 1.7, margin: 0 }}>
             🎃 의상은 자율 · 준비물은 같이 먹을 음식 하나
           </p>
         </div>
@@ -479,15 +506,16 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
 
           {[
             {
-              time: '19:00–20:30',
+              time: '19:00–20:00',
               title: '입장 & 아이스브레이킹',
               items: [
                 '웰컴 드링크, 포토존',
-                '입장 사이트 QR 안내 → "자신에 대해 한 줄 소개" 올리기',
+                '입장 오픈카톡방 QR 안내 → "자신에 대해 한 줄 소개" 올리기',
+                '🍬 공간 곳곳에 숨겨진 사탕 찾기 이벤트',
               ],
             },
             {
-              time: '20:30–21:30',
+              time: '20:00–21:30',
               title: '레크레이션',
               items: [
                 '낱말 퀴즈, 가격 퀴즈, 베팅 게임',
@@ -497,7 +525,9 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
             {
               time: '21:30–24:00',
               title: '자유 시간 및 자율 퇴실. 12시 마감',
-              items: [],
+              items: [
+                '🎮 보드게임 사이트 공유 → 처음 만나도 게임 하나면 금방 친해져요',
+              ],
               note: '대화할 사람이 없다고요? 걱정 마세요.\n여러분의 친구 👻 조라가 두둥~ 등장합니다!',
             },
           ].map((block, idx) => (
