@@ -458,7 +458,7 @@ export function HomePage({ onReplayIntro }: HomePageProps) {
                 모집 마감 &amp; 입금
               </p>
               <p className="font-sans" style={{ fontSize: '14px', color: '#B98CE0', lineHeight: 1.7, margin: '0 0 12px' }}>
-                10월 21일까지 신청 후, 21일에 계좌 개인 전달 예정입니다.<br />
+                10월 19일까지 신청 후, 19일에 계좌 개인 전달 예정입니다.<br />
                 입금 확인 시 자리가 확정됩니다.
               </p>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
